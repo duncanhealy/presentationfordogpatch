@@ -8,13 +8,50 @@
 ## Intro
 
 - Duncan Healy: A kid that learned to code by Poking 
-- Assure Hedge: A fintech startup based in Dogpatch since Aug 2017
+- Fun fact: Most developers are actually mad scientists in disguise
+
+- Assure Hedge: A fintech startup based in Dogpatch that has excelled in mad science since 2016
 
 
-## What do we do
+- With all this mad science and information 
+- Do we live in a fish bowl
+![3 second memory](images/fishmemory.png)
+- How do we remember more than 3 seconds? We will come back to this!
 
-We connect SME to the wider world of FX products
-We provide an API for larger instituions to offer Hedging to their clients
+
+- AH Joke about what would happen if I got hit by a bus.
+- Every time I exit CHQ I check behind me just in case they want to test that theory
+
+
+![colleagues keep joking about what if](images/getwellorgethitbybus.png)
+
+
+- How do we help our companies survive when the inevitable Bus crash occurs?
+
+
+- We document
+- [ADR](https://github.com/npryce/adr-tools) https://github.com/npryce/adr-tools
+
+- Now we can remember those decisions we made when we were a lot less wise and why we made them
+
+
+Add adr to path and
+```
+adr init doc/architecture/decisions
+adr new This is the most important decision ever and \ 
+    if I do not write it down it will be forgotten
+```
+
+
+![luas to the rescue](images/luastotherescue.png)
+- Try recover from that bus
+
+---
+
+## What do we do at AH
+
+- We connect SME to the wider world of FX products
+- We provide an API for larger instituions to offer Hedging to their clients
 
 ---
 
@@ -36,7 +73,13 @@ Lets have a look at some Spot rates
     "NZDUSD": 0.64405,
     "EURGBP": 0.878525,
     "EURJPY": 130.721,
-    "GBPJPY": 148.7905,
+    "GBPJPY": 148.7905
+}
+```
+
+
+```json
+{
     "CHFJPY": 114.5325,
     "GBPCHF": 1.2991700000000002,
     "EURAUD": 1.6315,
@@ -54,6 +97,10 @@ Lets have a look at some Spot rates
     "EURNOK": 9.52048,
     "USDNOK": 8.27635,
     "USDMXN": 18.990465,
+}```
+
+```json
+{
     "AUDCHF": 0.6995899999999999,
     "EURNZD": 1.7861,
     "USDZAR": 14.83275,
@@ -81,6 +128,8 @@ Lets have a look at some Spot rates
 }
 ```
 
+
+## Test
 
 
 We have a range of currency pairs and floating point numbers for each

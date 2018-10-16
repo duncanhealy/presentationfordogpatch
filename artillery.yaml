@@ -1,0 +1,17 @@
+config:
+  target: 'https://static-site.web.assurehedge.com'
+  phases:
+    - duration: 100
+      arrivalRate: 100
+  defaults:
+    headers:
+scenarios:
+  - flow:
+      - get:
+          # add the url you need to send get request
+          url: "/"
+          capture:
+          # capturing responce using reg expression
+            - regexp: "[^]*"
+              as: "response"
+      - log: "response= {{response}}"

@@ -13,11 +13,12 @@
 - Assure Hedge: A fintech based in Dogpatch
 
 
-- Information overload 
+Information overload 
 
 ![3 second memory](images/fishmemory.png)
 
-- Can you remember more than 3 seconds?
+Can you remember more than 3 seconds?
+
 
 Lets have a look at some Spot rates
 
@@ -94,6 +95,7 @@ Lets have a look at some Spot rates
 }
 ```
 
+
 ```json
 {
     "SEKJPY": 12.510304999999999,
@@ -101,6 +103,7 @@ Lets have a look at some Spot rates
     "NOKSEK": 1.09754
 }
 ```
+
 
 - AH Joke about what would happen if I got hit by a bus.
 
@@ -111,14 +114,14 @@ Lets have a look at some Spot rates
 ![colleagues keep joking about what if](images/getwellorgethitbybus.png)
 
 
-- How do we help our companies survive when the inevitable Bus crash occurs?
+### How do we help our companies survive when the inevitable Bus crash occurs?
 
 
-- We document
+### We document
 
 - [ADR](https://github.com/npryce/adr-tools) https://github.com/npryce/adr-tools
 
-- Now we can remember those decisions we made when we were a lot less wise and why we made them
+### Now we can remember those decisions we made when we were a lot less wise and why we made them
 
 
 Add adr to path and
@@ -128,7 +131,8 @@ adr new This is the most important decision ever and \
     if I do not write it down it will be forgotten
 ```
 
-- Cluster crash
+
+### Cluster crash
 
 ![luas to the rescue](images/luastotherescue.png)
 - Try recover from that bus
@@ -172,13 +176,16 @@ Anything wrong?
 
 ## Test
 
+[![asciicast](https://asciinema.org/a/e2SSEIMrPmpjtwM8oD7XFjKyQ.png)](https://asciinema.org/a/e2SSEIMrPmpjtwM8oD7XFjKyQ?autoplay=1&speed=3&theme=tango&size=medium)
 
 
+[Report](report.json.html)
 
+
+[limits](report.limit.html)
 
 ---
 
-We have a range of currency pairs and floating point numbers for each
 ```json
 {
     "EURUSD": 1.150345,
@@ -196,12 +203,19 @@ We have a range of currency pairs and floating point numbers for each
 }
 ```
 
+We have a range of currency pairs and floating point numbers for each
+
+
 ## What can we do with this?
+
 
 ![Generate Quotes](images/quoteui.png)
 
 
 ![Quote for a particular date and rate](images/quoteuiselectrate.png)
+
+
+![Quote limited](images/quoteuiprot.png)
 
 
 ### Useful Data
@@ -250,12 +264,14 @@ We have a range of currency pairs and floating point numbers for each
 ### Transform
 
 ```js
-
   return new require('stream').Transform({
     transform: function transformer(chunk, encoding, callback){
         // callback(<error>, <result>)
-        callback(false, chunk.map(a => a ^ 0xFF);;
+        callback(false, chunk.map(a => {
+            // operations on Buffer 
+            return a 
+        })
     }
-  });```
+  })
 ```
 

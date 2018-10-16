@@ -275,3 +275,5 @@ We have a range of currency pairs and floating point numbers for each
   })
 ```
 
+
+![git stats](images/commitstats.png)

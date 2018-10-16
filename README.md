@@ -146,6 +146,9 @@ adr new This is the most important decision ever and \
 [![asciicast](https://asciinema.org/a/HKnUr4XL9BCBVbHkqDqDcn8gE.png)](https://asciinema.org/a/HKnUr4XL9BCBVbHkqDqDcn8gE?autoplay=1&speed=3&theme=tango&size=medium)
 
 
+Anything wrong?
+
+
 ![Jira Update](images/jiraUpdate.png)
 
 
@@ -153,6 +156,9 @@ adr new This is the most important decision ever and \
 
 
 ![Jira Commits](images/jiracommits.png)
+
+
+![luas to the rescue](images/luastotherescue.png)
 
 
 ### Rollback
@@ -167,11 +173,35 @@ adr new This is the most important decision ever and \
 ## Test
 
 
-We have a range of currency pairs and floating point numbers for each
+
+
 
 ---
 
+We have a range of currency pairs and floating point numbers for each
+```json
+{
+    "EURUSD": 1.150345,
+    "USDJPY": 113.628,
+    "GBPUSD": 1.309405,
+    "USDCHF": 0.99221,
+    "EURCHF": 1.141405,
+    "AUDUSD": 0.705075,
+    "USDCAD": 1.294525,
+    "NZDUSD": 0.64405,
+    "EURGBP": 0.878525,
+    "EURJPY": 130.721,
+    "GBPJPY": 148.7905,
+    "CHFJPY": 114.5325,
+}
+```
+
 ## What can we do with this?
+
+![Generate Quotes](images/quoteui.png)
+
+
+![Quote for a particular date and rate](images/quoteuiselectrate.png)
 
 
 ### Useful Data
@@ -214,6 +244,7 @@ We have a range of currency pairs and floating point numbers for each
 
 
 ### Infer
+
 
 
 ### Transform

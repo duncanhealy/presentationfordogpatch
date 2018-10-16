@@ -184,6 +184,87 @@ Anything wrong?
 
 [limits](report.limit.html)
 
+
+```yaml
+apiVersion: v1
+items:
+- apiVersion: autoscaling/v1
+  kind: HorizontalPodAutoscaler
+  metadata:
+    annotations:
+      alpha/target.custom-metrics.podautoscaler.kubernetes.io: '{"items":[{"name":"qps",
+        "value": "20"}]}'
+      autoscaling.alpha.kubernetes.io/conditions: '[{"type":"AbleToScale","status":"True","lastTransitionTime":"2018-10-16T09:55:21Z","reason":"SucceededRescale","message":"the
+        HPA controller was able to update the target scale to 4"},{"type":"ScalingActive","status":"True","lastTransitionTime":"2018-10-16T09:51:20Z","reason":"ValidMetricFound","message":"the
+        HPA was able to successfully calculate a replica count from cpu resource utilization
+        (percentage of request)"},{"type":"ScalingLimited","status":"True","lastTransitionTime":"2018-10-16T09:55:21Z","reason":"ScaleUpLimit","message":"the
+        desired replica count is increasing faster than the maximum scale rate"}]'
+      autoscaling.alpha.kubernetes.io/current-metrics: '[{"type":"Resource","resource":{"name":"cpu","currentAverageUtilization":272,"currentAverageValue":"30m"}}]'
+    creationTimestamp: 2018-10-16T09:49:19Z
+    name: static-site
+    namespace: demo
+    resourceVersion: "2872376"
+    selfLink: /apis/autoscaling/v1/namespaces/demo/horizontalpodautoscalers/static-site
+    uid: c0a7955c-d128-11e8-bb6c-56d5d265a1ee
+  spec:
+    maxReplicas: 8
+    minReplicas: 2
+    scaleTargetRef:
+      apiVersion: apps/v1beta1
+      kind: Deployment
+      name: static-site-v1
+    targetCPUUtilizationPercentage: 80
+  status:
+    currentCPUUtilizationPercentage: 272
+    currentReplicas: 2
+    desiredReplicas: 4
+    lastScaleTime: 2018-10-16T09:55:21Z
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""
+
+```
+
+
+[post hpa](hpa.json.html)
+
+
+```yaml
+{{- if .Values.autoscaleMin }}
+apiVersion: autoscaling/v2beta1
+kind: HorizontalPodAutoscaler
+metadata:
+    name: {{ .Chart.Name }}
+    namespace: {{ .Release.Namespace }}
+    annotations:
+      alpha/target.custom-metrics.podautoscaler.kubernetes.io: '{"items":[{"name":"qps", "value": "20"}]}'
+spec:
+    maxReplicas: {{ .Values.autoscaleMax }}
+    minReplicas: {{ .Values.autoscaleMin }}
+    targetCPUUtilizationPercentage: 80
+    scaleTargetRef:
+      apiVersion: apps/v1beta1
+      kind: Deployment
+      name: {{ .Values.service.name }}-{{ .Chart.Version | replace "." "-"  }}
+{{ end }}
+```
+
+
+[2nd hpa](hpa2.json.html)
+
+
+[4th hpa](hpa4.json.html)
+
+
+[![asciicast](
+https://asciinema.org/a/RWEbnvXAQBMgeQ8JE9G0QC8xm.png)](https://asciinema.org/a/RWEbnvXAQBMgeQ8JE9G0QC8xm?autoplay=1&speed=10&theme=tango&size=medium)
+
+
+[flood](flood.json.html)
+
+
+
 ---
 
 ```json

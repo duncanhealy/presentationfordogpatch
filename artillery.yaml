@@ -1,8 +1,8 @@
 config:
   target: 'https://static-site.web.assurehedge.com'
   phases:
-    - duration: 100
-      arrivalRate: 100
+    - duration: 50
+      arrivalRate: 1000
   defaults:
     headers:
 scenarios:

@@ -5,10 +5,11 @@ test-site:
 
 test: test-site
 	echo "done"
-bench-site:
+bench-site-%:
+	echo "testing for $*"
 	./node_modules/.bin/artillery dino
-	DEBUG='' ./node_modules/.bin/artillery run --quiet -o report.json artillery.yaml > testout.txt
-	cat report.json
-	./node_modules/.bin/artillery report report.json
-	${BROWS} report.json.html
+	DEBUG='' ./node_modules/.bin/artillery run --quiet -o $*.json artillery.yaml > testout.txt
+	cat $*.json
+	./node_modules/.bin/artillery report $*.json
+	${BROWS} $*.json.html
 	

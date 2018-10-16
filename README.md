@@ -357,4 +357,58 @@ We have a range of currency pairs and floating point numbers for each
 ```
 
 
+## Tool List
+
+```text
+> curl
+> http
+> git
+> slack
+> node
+> npm
+> n
+> python
+> helm - 	curl https://raw.githubusercontent.com/helm/helm/master/scripts/get | sudo bash
+> kubectl
+> firefox
+> kubectx
+> kubens
+> go
+> bup
+> Postman
+> VirtuaBox
+> mosh
+> ufw
+> docker - curl -fsSL get.docker.com -o get-docker.sh
+> docker-compose - curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-'uname -s’-‘uname -m’ -o /usr/local/bin/docker-compose
+> brigade
+> draft
+> az
+> gcloud
+> aws
+> jq
+> jpterm
+> htop
+> ngrok
+> microk8s - snap install microk8s --classic --beta
+> ng - npm install -g @angular/cli
+> workbox - npm install workbox-cli --global
+```
+
+
+## testing
+
+```text
+
+> k6
+> fortio
+> artillery
+> bubbleprof
+```
+
 ![git stats](images/commitstats.png)
+
+
+```
+Remember to switch those devices off :)
+```

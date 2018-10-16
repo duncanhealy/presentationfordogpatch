@@ -4,7 +4,7 @@
   "description": "Presentation for developer community at dogpatch",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "make test"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/duncanhealy/presentationfordogpatch/issues"
   },
-  "homepage": "https://github.com/duncanhealy/presentationfordogpatch#readme"
+  "homepage": "https://github.com/duncanhealy/presentationfordogpatch#readme",
+  "dependencies": {
+    "artillery": "^1.6.0-24"
+  }
 }
